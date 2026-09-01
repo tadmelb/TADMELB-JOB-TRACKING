@@ -1,0 +1,8 @@
+{
+  "name": "TADMELB Trade Project Tracker",
+  "description": "Project and job tracking system for Fencing, Decking, Pergola, and Carport contractors. Manage client info, specifications, job scheduling, and site progress.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

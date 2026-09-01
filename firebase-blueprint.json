@@ -1,0 +1,65 @@
+{
+  "entities": {
+    "UserProfile": {
+      "title": "UserProfile",
+      "description": "User account profile for email authentication",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "email": { "type": "string", "format": "email" },
+        "displayName": { "type": "string" },
+        "createdAt": { "type": "string" }
+      },
+      "required": ["id", "email"]
+    },
+    "Project": {
+      "title": "Project",
+      "description": "Trade construction project record",
+      "type": "object",
+      "properties": {
+        "id": { "type": "string" },
+        "userId": { "type": "string" },
+        "projectNumber": { "type": "string" },
+        "title": { "type": "string" },
+        "status": { "type": "string" },
+        "priority": { "type": "string" },
+        "clientName": { "type": "string" },
+        "clientPhone": { "type": "string" },
+        "clientEmail": { "type": "string" },
+        "siteAddress": { "type": "string" },
+        "suburb": { "type": "string" },
+        "accessNotes": { "type": "string" },
+        "sections": { "type": "array" },
+        "colour": { "type": "string" },
+        "colourHex": { "type": "string" },
+        "dimensions": { "type": "string" },
+        "style": { "type": "string" },
+        "materialsSummary": { "type": "string" },
+        "siteInstructions": { "type": "string" },
+        "createdAt": { "type": "string" },
+        "scheduledStartDate": { "type": "string" },
+        "targetCompletionDate": { "type": "string" },
+        "actualCompletionDate": { "type": "string" },
+        "siteVisitDate": { "type": "string" },
+        "postcode": { "type": "string" },
+        "progressPercentage": { "type": "number" },
+        "workflowTasks": { "type": "array" },
+        "siteLogs": { "type": "array" },
+        "photos": { "type": "array" },
+        "notes": { "type": "string" },
+        "updatedAt": { "type": "string" }
+      },
+      "required": ["id", "userId", "projectNumber", "title", "status", "clientName", "siteAddress"]
+    }
+  },
+  "firestore": {
+    "/users/{userId}": {
+      "schema": "UserProfile",
+      "description": "Stores user account information"
+    },
+    "/projects/{projectId}": {
+      "schema": "Project",
+      "description": "Stores shared and user trade construction projects"
+    }
+  }
+}
